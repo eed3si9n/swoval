@@ -634,7 +634,7 @@ object Build {
               else arg
             )
           val proc = new ProcessBuilder(args: _*).start()
-          proc.waitFor(5, TimeUnit.SECONDS)
+          proc.waitFor(10, TimeUnit.SECONDS)
           val in = Source.fromInputStream(proc.getInputStream).mkString
           if (in.nonEmpty) System.err.println(in)
           val err = Source.fromInputStream(proc.getErrorStream).mkString
